@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { pluck, range } from './shared/utils/utils';
+import { UsersService } from './shared/services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,5 @@ import { pluck, range } from './shared/utils/utils';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor() {
-    console.log('app', range(1, 5)); // [1, 2, 3, 4]
-    console.log(pluck([{ name: 'John' }, { name: 'Doe' }], 'name')); // ['
-  }
+  constructor() {}
 }
