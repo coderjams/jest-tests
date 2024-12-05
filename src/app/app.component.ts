@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { UsersService } from './shared/services/users.service';
 
 @Component({
   selector: 'app-root',
