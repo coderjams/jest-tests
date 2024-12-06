@@ -2,16 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PaginationComponent } from './pagination.component';
 import { UtilsService } from '../../services/utils.service';
 import { By } from '@angular/platform-browser';
-import { first } from 'rxjs';
+import { first, range } from 'rxjs';
 
 describe('PaginationComponent', () => {
   let component: PaginationComponent;
   let fixture: ComponentFixture<PaginationComponent>;
+  // incase we want to actually mock our utils service and not use the real one
+  const mockUtilsService = {
+    range: () => [1, 2, 3, 4, 5],
+  };
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [PaginationComponent],
       // add utils service to providers when we dont need to mock it and the service doesnt change our behavior of the component
-      providers: [UtilsService],
+      // providers: [UtilsService],
+      // use the below providers when we want to mock the service
+      providers: [{ provide: UtilsService, useValue: mockUtilsService }],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PaginationComponent);
