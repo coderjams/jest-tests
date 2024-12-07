@@ -1,13 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { TodosService } from './todos.service';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';
 import {
-  HttpClientTestingModule,
   HttpTestingController,
   provideHttpClientTesting,
 } from '@angular/common/http/testing';
 import { FilterEnum } from '../types/filter.enum';
-import { TodoInterface } from '../types/todo.interface';
 
 describe('TodosService', () => {
   let todosService: TodosService;

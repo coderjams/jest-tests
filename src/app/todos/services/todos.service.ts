@@ -4,9 +4,7 @@ import { FilterEnum } from '../types/filter.enum';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class TodosService {
   httpClient = inject(HttpClient);
   todosSig = signal<TodoInterface[]>([]);
